@@ -8,12 +8,14 @@ const cors = require('cors') ;
 // CORS - CROSS ORIGIN RESOURCE SHARING -> letting your backend data share with the frontend running else where
 
 const auth = require('./routes/auth');
+const { signupvalidation } = require('./middlewares/authvalidation');
+const { signup } = require('./controllers/authcontroller');
 require('./models/db') ;
 
 app.use(bodyParser.json()) ;
 app.use(cors()) ;
 
-app.use('/auth' , auth) ;
+app.use('/auth' , signupvalidation , signup) ;
 const PORT = process.env.PORT || 8080 ;
 
 
