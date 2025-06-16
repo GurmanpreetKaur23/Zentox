@@ -1,35 +1,34 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Navbar from './pages/Navbar';
 
-function App() {
-  const [count, setCount] = useState(0)
+import Index from './pages/Index';
+import Home from './pages/Home';
+import GetHelp from './pages/GetHelp';
+import NaturalCures from './pages/NaturalCures';
+import Tracker from './pages/Tracker';
+import Recipes from './pages/Recipes';
+import Profile from './pages/Profile';
+import NotFound from './pages/NotFound';
 
-  return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+const App = () => (
+  <BrowserRouter>
+    <div className="bg-gray-50 min-h-screen">
+      <Navbar />
+      <div className="max-w-4xl mx-auto p-4">
+        <Routes>
+          <Route path="/" element={<Index />} />
+          <Route path="/home" element={<Home />} />
+          <Route path="/get-help" element={<GetHelp />} />
+          <Route path="/natural-cures" element={<NaturalCures />} />
+          <Route path="/tracker" element={<Tracker />} />
+          <Route path="/recipes" element={<Recipes />} />
+          <Route path="/profile" element={<Profile />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+    </div>
+  </BrowserRouter>
+);
 
-export default App
+export default App;
