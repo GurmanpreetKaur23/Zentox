@@ -1,214 +1,68 @@
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
 
-/* Zentox Wellness Design System - Refined Theme */
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
 
-@layer base {
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #646cff;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+@media (prefers-color-scheme: light) {
   :root {
-    /* Dark Mode - High Contrast/Futuristic */
-    --background: 15 23 42; /* #0F172A */
-    --foreground: 241 245 249; /* #F1F5F9 */
-
-    --card: 30 41 59; /* #1E293B */
-    --card-foreground: 241 245 249; /* #F1F5F9 */
-
-    --popover: 30 41 59; /* #1E293B */
-    --popover-foreground: 241 245 249; /* #F1F5F9 */
-
-    --primary: 124 58 237; /* #7C3AED */
-    --primary-foreground: 241 245 249; /* #F1F5F9 */
-
-    --secondary: 147 51 234; /* #9333EA */
-    --secondary-foreground: 241 245 249; /* #F1F5F9 */
-
-    --muted: 30 41 59; /* #1E293B */
-    --muted-foreground: 148 163 184; /* #94A3B8 */
-
-    --accent: 147 51 234; /* #9333EA */
-    --accent-foreground: 241 245 249; /* #F1F5F9 */
-
-    --destructive: 239 68 68;
-    --destructive-foreground: 241 245 249;
-
-    --border: 30 41 59; /* #1E293B */
-    --input: 30 41 59; /* #1E293B */
-    --ring: 124 58 237; /* #7C3AED */
-
-    --radius: 1rem;
-
-    /* Zentox refined colors - dark mode */
-    --zen-primary: 124 58 237; /* #7C3AED */
-    --zen-accent: 147 51 234; /* #9333EA */
-    --zen-background: 15 23 42; /* #0F172A */
-    --zen-card: 30 41 59; /* #1E293B */
-    --zen-text-primary: 241 245 249; /* #F1F5F9 */
-    --zen-text-secondary: 148 163 184; /* #94A3B8 */
-    
-    /* Pastel accents for bottles/vegetables - adapted for dark */
-    --pastel-mint: 136 192 185; /* Adapted #88C0B9 */
-    --pastel-sage: 124 179 153;
-    --pastel-lavender: 147 51 234; /* Using accent purple */
-    --pastel-peach: 254 202 202;
-    --pastel-sky: 124 58 237; /* Using primary purple */
-    --pastel-cream: 254 249 195;
-    --pastel-rose: 251 207 232;
-    --pastel-cucumber: 136 192 185;
-    --pastel-carrot: 254 215 170;
-    --pastel-beetroot: 147 51 234;
+    color: #213547;
+    background-color: #ffffff;
   }
-
-  .light {
-    /* Light Mode - Zen Wellness */
-    --background: 253 253 253; /* #FDFDFD */
-    --foreground: 46 58 89; /* #2E3A59 */
-
-    --card: 255 255 255; /* #FFFFFF */
-    --card-foreground: 46 58 89; /* #2E3A59 */
-
-    --popover: 255 255 255; /* #FFFFFF */
-    --popover-foreground: 46 58 89; /* #2E3A59 */
-
-    --primary: 136 192 185; /* #88C0B9 */
-    --primary-foreground: 46 58 89; /* #2E3A59 */
-
-    --secondary: 224 242 241; /* #E0F2F1 */
-    --secondary-foreground: 46 58 89; /* #2E3A59 */
-
-    --muted: 224 242 241; /* #E0F2F1 */
-    --muted-foreground: 108 117 125; /* #6C757D */
-
-    --accent: 136 192 185; /* #88C0B9 */
-    --accent-foreground: 46 58 89; /* #2E3A59 */
-
-    --destructive: 239 68 68;
-    --destructive-foreground: 255 255 255;
-
-    --border: 224 242 241; /* #E0F2F1 */
-    --input: 224 242 241; /* #E0F2F1 */
-    --ring: 136 192 185; /* #88C0B9 */
-
-    /* Zentox refined colors - light mode */
-    --zen-primary: 136 192 185; /* #88C0B9 */
-    --zen-accent: 224 242 241; /* #E0F2F1 */
-    --zen-background: 253 253 253; /* #FDFDFD */
-    --zen-card: 255 255 255; /* #FFFFFF */
-    --zen-text-primary: 46 58 89; /* #2E3A59 */
-    --zen-text-secondary: 108 117 125; /* #6C757D */
-    
-    /* Pastel accents for bottles/vegetables - light mode */
-    --pastel-mint: 136 192 185; /* #88C0B9 */
-    --pastel-sage: 110 231 183;
-    --pastel-lavender: 196 181 253;
-    --pastel-peach: 251 146 146;
-    --pastel-sky: 136 192 185; /* Using zen primary */
-    --pastel-cream: 250 204 21;
-    --pastel-rose: 236 72 153;
-    --pastel-cucumber: 34 197 94;
-    --pastel-carrot: 251 146 60;
-    --pastel-beetroot: 220 38 127;
+  a:hover {
+    color: #747bff;
   }
-}
-
-@layer base {
-  * {
-    @apply border-border;
-  }
-
-  body {
-    @apply bg-zen-background text-zen-text-primary font-sans transition-colors duration-500;
-    background-color: rgb(var(--zen-background));
-    color: rgb(var(--zen-text-primary));
-  }
-
-  /* Custom scrollbar - zen theme */
-  ::-webkit-scrollbar {
-    width: 8px;
-  }
-
-  ::-webkit-scrollbar-track {
-    @apply bg-zen-background;
-    background-color: rgb(var(--zen-background));
-  }
-
-  ::-webkit-scrollbar-thumb {
-    background: linear-gradient(135deg, rgb(var(--zen-primary)), rgb(var(--zen-accent)));
-    @apply rounded-full;
-  }
-
-  ::-webkit-scrollbar-thumb:hover {
-    background: linear-gradient(135deg, rgb(var(--pastel-mint)), rgb(var(--pastel-lavender)));
-  }
-}
-
-@layer utilities {
-  .zen-gradient {
-    background: linear-gradient(135deg, rgb(var(--zen-primary)) 0%, rgb(var(--zen-accent)) 100%);
-  }
-  
-  .zen-mint-gradient {
-    background: linear-gradient(135deg, rgb(var(--pastel-cucumber)) 0%, rgb(var(--pastel-mint)) 100%);
-  }
-  
-  .zen-peach-gradient {
-    background: linear-gradient(135deg, rgb(var(--pastel-peach)) 0%, rgb(var(--pastel-rose)) 100%);
-  }
-
-  .zen-veggie-gradient {
-    background: linear-gradient(135deg, 
-      rgb(var(--pastel-cucumber)) 0%, 
-      rgb(var(--pastel-carrot)) 25%, 
-      rgb(var(--pastel-beetroot)) 50%, 
-      rgb(var(--pastel-lavender)) 75%, 
-      rgb(var(--pastel-mint)) 100%);
-  }
-
-  .glass-effect {
-    backdrop-filter: blur(20px) saturate(180%);
-    background-color: rgba(var(--zen-card), 0.7);
-    border: 1px solid rgba(var(--zen-primary), 0.2);
-    box-shadow: 0 8px 32px rgba(var(--zen-primary), 0.1);
-  }
-
-  .zen-shadow {
-    box-shadow: 0 10px 25px rgba(var(--zen-primary), 0.15), 
-                0 4px 10px rgba(var(--zen-accent), 0.1);
-  }
-
-  /* Floating particles background */
-  .floating-particles::before {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-image: 
-      radial-gradient(circle at 20% 20%, rgba(var(--zen-primary), 0.03) 0%, transparent 50%),
-      radial-gradient(circle at 80% 80%, rgba(var(--zen-accent), 0.03) 0%, transparent 50%),
-      radial-gradient(circle at 40% 90%, rgba(var(--pastel-mint), 0.03) 0%, transparent 50%);
-    animation: float 20s ease-in-out infinite;
-  }
-
-  /* Shimmer effect */
-  .shimmer {
-    position: relative;
-    background: linear-gradient(
-      90deg,
-      transparent 0%,
-      rgba(var(--zen-primary), 0.1) 50%,
-      transparent 100%
-    );
-    background-size: 200% 100%;
-    animation: shimmer 3s ease-in-out infinite;
-  }
-
-  /* Hover effects */
-  .hover-lift {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-  
-  .hover-lift:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(var(--zen-primary), 0.15);
+  button {
+    background-color: #f9f9f9;
   }
 }
