@@ -7,15 +7,15 @@ const bodyParser = require('body-parser') ; // when someone sends data to your s
 const cors = require('cors') ;
 // CORS - CROSS ORIGIN RESOURCE SHARING -> letting your backend data share with the frontend running else where
 
-const auth = require('./routes/auth');
+const auth = require('./routes/authRouter');
 const { signupvalidation } = require('./middlewares/authvalidation');
 const { signup } = require('./controllers/authcontroller');
 require('./models/db') ;
 
-app.use(bodyParser.json()) ;
+app.use(express.json());
 app.use(cors()) ;
 
-app.use('/auth' , signupvalidation , signup) ;
+app.use('/auth' , auth) ;
 const PORT = process.env.PORT || 8080 ;
 
 
